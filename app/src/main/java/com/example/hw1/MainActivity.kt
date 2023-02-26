@@ -10,6 +10,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
@@ -23,7 +24,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Column {
+            Column (
+                modifier = Modifier.background(Color.Black)
+            ){
                 hw1()
             }
         }
@@ -36,7 +39,6 @@ fun ColumnScope.hw1() {
         modifier = Modifier
             .background(Color.Red)
             .fillMaxWidth()
-
             .weight(1f)
     ) {
         Text(text = "TextView", style = TextStyle(fontSize = 15.sp, color = Color.White, textAlign = TextAlign.Center))
@@ -67,6 +69,7 @@ fun ColumnScope.hw1() {
                 modifier = Modifier
                     .background(Color.Green)
                     .fillMaxWidth()
+
                     .weight(2f)
             ) {
                 Text(text = "TextView", style = TextStyle(fontSize = 15.sp, color = Color.White, textAlign = TextAlign.Center))
@@ -75,6 +78,7 @@ fun ColumnScope.hw1() {
                 modifier = Modifier
                     .background(Color.Yellow)
                     .fillMaxWidth()
+                    .padding(top=  3.dp)
                     .weight(1f)
             ) {
                 Text(text = "TextView", style = TextStyle(fontSize = 15.sp, color = Color.White, textAlign = TextAlign.Center))
@@ -93,6 +97,7 @@ fun ColumnScope.hw1() {
             modifier = Modifier
                 .background(colorResource(id = R.color.purple_200))
                 .fillMaxHeight()
+
                 .weight(1f)
         ) {
             Text(text = "TextView", style = TextStyle(fontSize = 15.sp, color = Color.White, textAlign = TextAlign.Center))
@@ -101,6 +106,7 @@ fun ColumnScope.hw1() {
             modifier = Modifier
                 .background(Color.Gray)
                 .fillMaxHeight()
+                .padding(start =   3.dp)
                 .weight(2f)
         ) {
             Text(text = "TextView", style = TextStyle(fontSize = 15.sp, color = Color.White, textAlign = TextAlign.Center))
